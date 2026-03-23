@@ -22,7 +22,6 @@ describe("calculator", () => {
       { op: "divide", a: 64, b: 4, res: 16 },
     ];
     ops.forEach((val) => {
-      // console.log(`${val.op} ${val.a}, ${val.b}, ${val.res}`)
       expect(calculator[val.op](val.a, val.b)).toBe(val.res);
     });
   });

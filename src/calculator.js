@@ -65,6 +65,4 @@ const calculator = (() => {
   return { add, subtract, multiply, divide };
 })();
 
-// console.log(calculator.add());
-
 export default calculator;
