@@ -38,5 +38,15 @@ describe("analyzeArray", () => {
     expect(analyzeArray([])).toBeUndefined();
   });
 
-  test.todo("sad: error handling for any non-numeric");
+  test("sad: error handling for any non-numeric and NaN", () => {
+    const mockValues = [
+      ["a", "b", 3],
+      [1, 2, "3", 4],
+      [1, 2, NaN, 4],
+      [1, true, 3, false],
+    ];
+    mockValues.forEach((vals) => {
+      expect(analyzeArray(vals)).toBeUndefined();
+    });
+  });
 });

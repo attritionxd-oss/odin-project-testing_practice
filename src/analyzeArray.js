@@ -2,10 +2,10 @@ const analyzeArray = (items) => {
   if (!items) return;
   if (items.length === 0) return;
 
-  // const itemTypes = items.map((item) => item.constructor.name);
-  // const hasNoNonnumeric = itemTypes.find((itemType) => itemType !== "Number");
-  // console.log(items, itemTypes, "has", hasNoNonnumeric);
-  // if (!hasNoNonnumeric) return;
+  const hasNoNonnumeric = items.every(
+    (val) => typeof val === "number" && !Number.isNaN(val),
+  );
+  if (!hasNoNonnumeric) return;
 
   const sum = items.reduce((acc, curr) => acc + curr, 0);
   const length = items.length;
